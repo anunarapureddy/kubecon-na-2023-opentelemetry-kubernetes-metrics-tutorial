@@ -105,18 +105,18 @@ scrape_configs:
 
   In order to apply a pod or service monitor, the CRDs need to be installed:
 
-    ```shell
-    kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/main/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
+  ```shell
+  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/main/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
 
-    kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/main/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
-    ```
+  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/main/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
+  ```
 
   You can verify both CRDs are present with the command `kubectl get customresourcedefinitions`. After that, ensure that the following lines are added to your list of CRDs.
 
-    ```shell
-    podmonitors.monitoring.coreos.com         
-    servicemonitors.monitoring.coreos.com      
-    ```
+  ```shell
+  podmonitors.monitoring.coreos.com         
+  servicemonitors.monitoring.coreos.com      
+  ```
 
 ### Step 2: Setting Up OpenTelemetry Collector
 
